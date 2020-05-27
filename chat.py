@@ -1,15 +1,15 @@
 
 
-from twilio.rest import Client 
+from twilio.rest import Client                                  #pip install twilio
  
 account_sid = 'AC00d51f0663ee1f916a6428838d9724b8' 
-auth_token = 'c61c4b228fbd9e3a01b0e7bdb30ff9ee' 
+auth_token = 'YOUR AUTH TOKEN' 
 client = Client(account_sid, auth_token) 
 def msg():
     message = client.messages.create( 
-                                from_='whatsapp:+14155238886',  
-                                body='Hey go and sleep',      
-                                to='whatsapp:+918240901474' 
+                                from_='whatsapp:+14155238886',     #twilio whatsapp number
+                                body='Hey, time to code!',         #Message to be sent
+                                to='whatsapp:PHONE NUMBER'         #whatsapp number 
                             ) 
     
     print(message.sid)
